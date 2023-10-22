@@ -4,13 +4,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import MainLayout from './components/Layout/MainLayout';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import DashboardPage from './pages/DashboardPage';
 import ContactsPage from './pages/ContactsPage';
 import ContactDetailPage from './pages/ContactDetailPage';
 import DealsPage from './pages/DealsPage';
-
-function DashboardPlaceholder() {
-  return <div className="p-6"><h1 className="text-2xl font-bold text-gray-900">Dashboard</h1><p className="text-gray-500 mt-2">Welcome to your CRM dashboard.</p></div>;
-}
 
 function CompaniesPlaceholder() {
   return <div className="p-6"><h1 className="text-2xl font-bold text-gray-900">Companies</h1><p className="text-gray-500 mt-2">Manage your companies here.</p></div>;
@@ -34,7 +31,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route path="/dashboard" element={<DashboardPlaceholder />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/contacts/:id" element={<ContactDetailPage />} />
             <Route path="/companies" element={<CompaniesPlaceholder />} />
