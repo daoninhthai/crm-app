@@ -7,15 +7,10 @@ import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import ContactsPage from './pages/ContactsPage';
 import ContactDetailPage from './pages/ContactDetailPage';
+import CompaniesPage from './pages/CompaniesPage';
+import CompanyDetailPage from './pages/CompanyDetailPage';
 import DealsPage from './pages/DealsPage';
-
-function CompaniesPlaceholder() {
-  return <div className="p-6"><h1 className="text-2xl font-bold text-gray-900">Companies</h1><p className="text-gray-500 mt-2">Manage your companies here.</p></div>;
-}
-
-function ActivitiesPlaceholder() {
-  return <div className="p-6"><h1 className="text-2xl font-bold text-gray-900">Activities</h1><p className="text-gray-500 mt-2">Track your activities here.</p></div>;
-}
+import ActivitiesPage from './pages/ActivitiesPage';
 
 function App() {
   return (
@@ -34,10 +29,10 @@ function App() {
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/contacts/:id" element={<ContactDetailPage />} />
-            <Route path="/companies" element={<CompaniesPlaceholder />} />
-            <Route path="/companies/:id" element={<CompaniesPlaceholder />} />
+            <Route path="/companies" element={<CompaniesPage />} />
+            <Route path="/companies/:id" element={<CompanyDetailPage />} />
             <Route path="/deals" element={<DealsPage />} />
-            <Route path="/activities" element={<ActivitiesPlaceholder />} />
+            <Route path="/activities" element={<ActivitiesPage />} />
           </Route>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
         </Routes>
