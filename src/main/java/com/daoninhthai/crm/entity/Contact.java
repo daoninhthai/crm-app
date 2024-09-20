@@ -6,6 +6,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "contacts")
@@ -44,6 +46,15 @@ public class Contact {
     @Column(nullable = false)
     @Builder.Default
     private ContactStatus status = ContactStatus.LEAD;
+
+    @ManyToMany
+    @JoinTable(
+            name = "contact_tags",
+            joinColumns = @JoinColumn(name = "contact_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    @Builder.Default
+    private Set<Tag> tags = new HashSet<>();
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
