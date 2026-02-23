@@ -30,6 +30,7 @@ public class Deal {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Builder.Default
     private DealStage stage = DealStage.LEAD;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -42,6 +42,7 @@ public class Contact {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    @Builder.Default
     private ContactStatus status = ContactStatus.LEAD;
 
     @CreationTimestamp

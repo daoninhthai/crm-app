@@ -41,6 +41,7 @@ public class Activity {
     private LocalDateTime dueDate;
 
     @Column(nullable = false)
+    @Builder.Default
     private boolean completed = false;
 
     @Column(name = "created_by")
